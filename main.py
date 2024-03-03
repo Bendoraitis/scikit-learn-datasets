@@ -1,6 +1,7 @@
 from sklearn.datasets import fetch_california_housing
 import pandas as pd
 
+
 # Load the California Housing dataset
 california_housing = fetch_california_housing()
 data = california_housing.data
