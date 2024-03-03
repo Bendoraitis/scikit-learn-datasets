@@ -4,6 +4,7 @@
 ```
 pip install sickit-learn
 pip install pandas
+pip install matplotlib
 
 python main.py
 ```
