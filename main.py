@@ -22,10 +22,6 @@ from sklearn.svm import SVC
     - MedHouseVal   median value in 100 000 USD 
 '''
 
-# log_clf = LogisticRegression(solver="lbfgs", random_state=42)
-# rnd_clf = RandomForestClassifier(n_estimators=100, random_state=42)
-# svm_clf = SVC(gamma="scale", random_state=42)
-
 # Create a DataFrame from the dataset
 california_housing = fetch_california_housing()
 df = pd.DataFrame(california_housing.data, columns=california_housing.feature_names)
