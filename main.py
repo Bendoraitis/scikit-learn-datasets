@@ -73,4 +73,4 @@ svc_accuracy = accuracy_score(y_test, svc_predictions)
 
 print(f"Logistic regression accuracy: {logistic_regression_accuracy:.2f}")
 print(f"Random classifier accuracy: {random_classifier_accuracy:.2f}")
-print(f"SVC accuracy: {svc_accuracy:.2f}")
+print(f"C-Support Vector Classification accuracy: {svc_accuracy:.2f}")
