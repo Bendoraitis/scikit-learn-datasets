@@ -7,6 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
+from xgboost import XGBClassifier  # Change this import
 
 
 '''
@@ -56,17 +57,22 @@ rnd_clf = RandomForestClassifier(n_estimators=100, random_state=42)
 rnd_clf_model = rnd_clf.fit(X_train_scaled, y_train)
 svm_clf = SVC(gamma="scale", random_state=42)
 svm_clf_model = svm_clf.fit(X_train_scaled, y_train)
+xgb_clf = XGBClassifier(n_estimators=240, learning_rate=0.03, random_state=42)
+xgb_clf_model = xgb_clf.fit(X_train_scaled, y_train)
 
 # Make predictions on the test set
-logistic_regression_predictions = log_clf_model.predict(X_test_scaled)
-random_classifier_predictions = rnd_clf_model.predict(X_test_scaled)
-svc_predictions = svm_clf_model.predict(X_test_scaled)
+logistic_regression_predictions = log_clf.predict(X_test_scaled)
+random_classifier_predictions = rnd_clf.predict(X_test_scaled)
+svc_predictions = svm_clf.predict(X_test_scaled)
+xgb_predictions = xgb_clf.predict(X_test_scaled)
 
 # Evaluate the model
 logistic_regression_accuracy = accuracy_score(y_test, logistic_regression_predictions)
 random_classifier_accuracy = accuracy_score(y_test, random_classifier_predictions)
 svc_accuracy = accuracy_score(y_test, svc_predictions)
+xgb_accuracy = accuracy_score(y_test, xgb_predictions)
 
 print(f"Logistic regression accuracy: {logistic_regression_accuracy:.2f}")
 print(f"Random classifier accuracy: {random_classifier_accuracy:.2f}")
 print(f"C-Support Vector Classification accuracy: {svc_accuracy:.2f}")
+print(f"XGBoost accuracy: {xgb_accuracy:.2f}")

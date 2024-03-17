@@ -5,6 +5,7 @@
 pip install sickit-learn
 pip install pandas
 pip install matplotlib
+pip install xgboost
 
 python main.py
 ```
